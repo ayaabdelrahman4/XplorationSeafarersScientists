@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Xploration: Project Seafarers and Scientists</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href="https://cdn.maptiler.com/maptiler-sdk-js/v2.5.1/maptiler-sdk.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+    <div class="headerdivision">
+        <h1 class="title1">Welcome Aboard!</h1>
+        <p class="description">Thank you for being a part of the project! We could not have done it without you </p>
+        <button id="input"> Input a new flask</button>
+        <div id="message"> Please wait! User location will be identified.</div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="filter">
+            <h2 id="title">Find Flasks:</h2>
+            
+                <!-- Date Range Picker -->
+            <form id="datepicker">
+                <p class="labels">Pick the dates</p>
+                <label id="datetext1" for="start">From:</label>
+                <input id="start" type="date">
+                <label id="datetext2" for="end">Until:</label>
+                <input id="end" type="date">
+            </form>
+            
+                <!-- Weather Conditions -->
+            <form id="weatherconditions">
+                <p class="labels">Pick the weather conditions</p>
+                <select id="weather">
+                    <option value="sunny">Sunny</option>
+                    <option value="Rain">Rain</option>
+                    <option value="partially cloudy">Partially cloudy</option>
+                    <option value="clear">Clear</option>
+                    <option value="windy">Windy</option>
+                </select>
+            </form>
+            
+                <!-- Temperature Range -->
+            <form id="temperature">
+                <p class="labels">Pick the temperature range in Celsius</p>
+                <select id="temperature">
+                    <option value="below-0">Below 0°C</option>
+                    <option value="0-10">0-10°C</option>
+                    <option value="10-20">10-20°C</option>
+                    <option value="20-30">20-30°C</option>
+                    <option value="above-30">Above 30°C</option>
+                </select>
+            </form>
+            
+                <!-- Air Index -->
+            <form id="airindex">
+                <p class="labels">Pick the range of air index values</p>
+                <select id="air">
+                    <option value="1">Good 1</option>
+                    <option value="2">Okay 2</option>
+                    <option value="3">Unhealthy 3</option>
+                    <option value="4">Unhealthy 4</option>
+                    <option value="5">Very Unhealthy 5</option>
+                </select>
+            </form>
+            
+                <!-- CO Concentration -->
+            <form id="uvradiation">
+                    <p class="labels">Pick the range for CO Concentration (µg/m³)</p>
+                    <select id="co">
+                    <option value="0-10">0-10</option>
+                    <option value="10-20">10-20</option>
+                    <option value="20-30">20-30</option>
+                    <option value="30-50">30-50</option>
+                    <option value="above-50">Above 50</option>
+                </select>
+            </form>
+            <button id="apply-filters">Apply Filters</button>
+            <div id="results"></div>
+            </div>
+        <div id="map">
+        <div id="location">You are here!<br> Please click on the blue circle to input a new data point</div>
+        <div id="box">
+            <input id="name" type="text" placeholder="Name">
+            <textarea id="comment" placeholder="How did the flask collectin go today?"></textarea>
+            <input id="image" type="file">
+            <button id="submit">Submit</button>
+        </div>
+        </div>
+    </div>
+    <div class="footer">
+        <h1 class="title1">Useful Links</h1>
+        <p class="description"><a href="https://xplorit.org/">Xplorit Page </p>
+        <p class="description"><a href="/"> Homepage </p>
+        <p class="description"><a href="/findings"> Findings </p>
+        <p class="description"><a href="/us"> About us </p>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.maptiler.com/maptiler-sdk-js/v2.5.1/maptiler-sdk.umd.js"></script>
+    <script src="https://cdn.maptiler.com/leaflet-maptilersdk/v2.0.0/leaflet-maptilersdk.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="/static/trial.js"></script>
+</body>
+</html>
